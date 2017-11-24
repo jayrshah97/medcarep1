@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div id="content" class="col-sm-12 full">
+      <div class="row">
+        <div class="login-box">
+
+          <div class="header">
+            Login to Medcare
+          </div>
+          <form class="form-horizontal login" ng-submit="login($event)">
+            <fieldset class="col-sm-12">
+              <div class="form-group">
+                <div class="controls row">
+                  <div class="input-group col-sm-12">
+                    <input type="text" class="form-control" ng-model="user.phno" id="phonenumber" placeholder="Phone Number"/>
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="controls row">
+                  <div class="input-group col-sm-12">
+                    <input type="password" ng-model="user.password" class="form-control" id="password" placeholder="Password"/>
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <button type="submit" class="btn btn-lg btn-primary col-xs-12">Login</button>
+              </div>
+            </fieldset>
+          </form>
+          <a class="pull-left" href="page-login.html#">Forgot Password?</a>
+          <a class="pull-right" href="page-register.html">Sign Up!</a>
+          <div class="clearfix"></div>
+        </div>
+      </div><!--/row-->
+    </div>
+  </div><!--/row-->
+</div>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='resources/js/jquery-3.1.0.min.js'>"+"<"+"/script>");
+</script>
+<script src="resources/js/signupin_jquery-migrate-1.4.1.min.js"></script>
+<script src="resources/js/signupin_bootstrap.min.js"></script>
+<script src="resources/js/signupin_jquery.icheck.min.js"></script>
+<script src="resources/js/signupin_custom.min.js"></script>
+<script src="resources/js/signupin_core.min.js"></script>
+<script src="resources/js/signupin_login.js"></script>
