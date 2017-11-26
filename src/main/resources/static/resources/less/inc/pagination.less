@@ -12,25 +12,27 @@
             padding: 0;
             width: 40px;
             height: 40px;
-            line-height: 38px;
+            line-height: 39px;
             text-align: center;
             font-size: 14px;
             z-index: 1;
             position: relative;
-            cursor: pointer;
+            border: 0;
             
             & > .zmdi {
                 font-size: 22px;
-                line-height: 39px;
+                line-height: 40px;
             }
+            
+            .hover-pop(rgba(0,0,0,0.1), 50%, 250ms, 0);
         }
-         
+        
         &.disabled {
             .opacity(0.5);
         }  
     }
 } 
-
+ 
 /*
  * Listview Pagination
  */
@@ -47,6 +49,6 @@
  * Pager
  */
 .pager li > a, .pager li > span {
-    padding: 5px 10px 6px; 
+    padding: 5px 10px 6px;
     color: @pagination-color;
 }

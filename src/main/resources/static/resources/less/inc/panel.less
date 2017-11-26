@@ -33,13 +33,13 @@
                     height: 2px;
                     width: 100%;
                     content: "";
-                    .transition(all);
-                    .transition-duration(300ms);
-                    .backface-visibility(hidden);
                 }
                 
                 &:after {
                     .scale(0);
+                    .transition(all);
+                    .transition-duration(300ms);
+                    .backface-visibility(hidden);
                 }
             }
         }
@@ -52,7 +52,7 @@
         
         &:before,
         &:after {
-            font-family: @font-icon-md;
+            font-family: 'Material Design Iconic Font';
             font-size: 17px;
             position: absolute;
             left: 0;
@@ -63,13 +63,13 @@
         }
         
         &:before {
-            content: "\f278";
+            content: "\f0fb";
             .scale(1);
         }
         
         &:after {
             .scale(0);
-            content: "\f273";
+            content: "\f111";
         }
         
         &.active {

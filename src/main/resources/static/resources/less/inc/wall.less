@@ -152,10 +152,10 @@
                 & > i {
                     font-size: 20px;
                 }
-            } 
-            
-            &.active i {
-                color: #333;
+                
+                &.active > i {
+                    color: #333;
+                }
             }
         }
     } 
@@ -171,7 +171,8 @@
     @media screen and (max-width: @screen-sm-max) {
         margin: 0 -16px 20px;
     }
-
+    
+    
     .wip-item {
         display: block;
         float: left;
@@ -180,7 +181,7 @@
         border: 2px solid #fff;
         .bg-cover-inline();
         
-        & > img { 
+        & > img {
             display: none;
         }
 
@@ -188,7 +189,7 @@
         &:first-child:nth-last-child(2) ~ div {
             width: 50%;
             padding-bottom: 40%;
-        }
+        } 
         
         &:first-child:nth-last-child(3), 
         &:first-child:nth-last-child(3) ~ div,

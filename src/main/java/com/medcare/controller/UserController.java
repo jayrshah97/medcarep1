@@ -35,7 +35,6 @@ public class UserController {
     public Map<String,Object> forForm(@RequestBody Map<String,Object> req,HttpServletRequest request)
     {
         HttpSession currentSession;
-        System.out.println("in userController");
         String phno=(String)req.get("phno");
         String password=(String)req.get("password");
         UserLoginModel user=new UserLoginModel();

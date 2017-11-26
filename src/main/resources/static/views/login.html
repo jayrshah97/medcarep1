@@ -1,50 +1,135 @@
-<div class="container">
-  <div class="row">
-    <div id="content" class="col-sm-12 full">
-      <div class="row">
-        <div class="login-box">
+<style>
 
-          <div class="header">
-            Login to Medcare
-          </div>
-          <form class="form-horizontal login" ng-submit="login($event)">
-            <fieldset class="col-sm-12">
-              <div class="form-group">
-                <div class="controls row">
-                  <div class="input-group col-sm-12">
-                    <input type="text" class="form-control" ng-model="user.phno" id="phonenumber" placeholder="Phone Number"/>
-                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  </div>
-                </div>
-              </div>
+.container-fluid{
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 100px;
+}
+.row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
 
-              <div class="form-group">
-                <div class="controls row">
-                  <div class="input-group col-sm-12">
-                    <input type="password" ng-model="user.password" class="form-control" id="password" placeholder="Password"/>
-                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <button type="submit" class="btn btn-lg btn-primary col-xs-12">Login</button>
-              </div>
-            </fieldset>
-          </form>
-          <a class="pull-left" href="page-login.html#">Forgot Password?</a>
-          <a class="pull-right" href="page-register.html">Sign Up!</a>
-          <div class="clearfix"></div>
-        </div>
-      </div><!--/row-->
-    </div>
-  </div><!--/row-->
-</div>
-<script type="text/javascript">
-    window.jQuery || document.write("<script src='resources/js/jquery-3.1.0.min.js'>"+"<"+"/script>");
-</script>
-<script src="resources/js/signupin_jquery-migrate-1.4.1.min.js"></script>
-<script src="resources/js/signupin_bootstrap.min.js"></script>
-<script src="resources/js/signupin_jquery.icheck.min.js"></script>
-<script src="resources/js/signupin_custom.min.js"></script>
-<script src="resources/js/signupin_core.min.js"></script>
-<script src="resources/js/signupin_login.js"></script>
+
+.centering {
+  float:none;
+  margin:0 auto;
+  }
+  html, body{height:100%; margin:0;padding:0}
+
+</style>
+
+ <div class="container-fluid">
+ 
+    <div class="row-fluid">
+    	 <div class="col-sm-12">
+		 <p align="center">
+		 <img  src="resources/images/medcare_logo.png" style="height:120px;margin-top:70px;"/>
+		 </p>
+		 </div>
+    	<div class="centering text-center">
+ 			<div ng-if="switch" class="lc-block toggled" id="l-login">
+ 	 			<form id = "loginForm" data-ng-submit = "login($event)">
+		            <div class="input-group m-b-20">
+		                <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+		                <div class="fg-line">
+		                    <input type="text" class="form-control" placeholder="Username" ng-model = "user.phno">
+		                </div>
+		            </div>
+	            
+		            <div class="input-group m-b-20">
+		                <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+		                <div class="fg-line">
+		                    <input type="password" class="form-control" placeholder="Password" ng-model = "user.password">
+		                </div>
+		            </div>
+	            
+	            	<div class="clearfix"></div>
+	            
+		            <div class="checkbox">
+		                <label>
+		                    <input type="checkbox" value="">
+		                    <i class="input-helper"></i>
+		                    Keep me signed in
+		                </label>
+		            </div>
+	            
+	            	<button type="submit" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></button>
+	            </form>
+	            <ul class="login-navigation">
+	                <li ng-click = "clickswitch($event)" data-block="#l-register" class="bgm-red">Register</li>
+	                <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
+	            </ul>
+        	</div>
+        
+		    	<!-- Register -->
+		    <div ng-if="!switch" class="lc-block toggled" id="l-register">
+				<div class="input-group m-b-20">
+					<span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+					<div class="fg-line">
+						<input type="text" class="form-control" placeholder="Name">
+					</div>
+				</div>
+
+		        <div class="input-group m-b-20">
+					<span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
+					<div class="fg-line">
+						<input type="text" class="form-control" placeholder="Contact Number">
+					</div>
+		        </div>
+		            
+		        <div class="input-group m-b-20">
+		             <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+					<div class="fg-line">
+						<input type="text" class="form-control" placeholder="Email Address">
+					</div>
+				</div>
+		            
+		        <div class="input-group m-b-20">
+		             <span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
+					<div class="fg-line">
+						<input type="text" class="form-control" placeholder="Address">
+					</div>
+				</div>
+
+				<div class="input-group m-b-20">
+					<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+					<div class="dtp-container fg-line">
+						<input type='text' class="form-control date-picker" placeholder="Birthday">
+					</div>
+				</div>
+		            
+		        <div class="clearfix"></div>
+		            
+		        <div class="checkbox">
+		             <label>
+		                 <input type="checkbox" value="">
+		                  <i class="input-helper"></i>
+		                  Accept the license agreement
+		             </label>
+		        </div>
+		            
+		        <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+		            
+		        <ul class="login-navigation">
+		            <li ng-click="clickswitch($event)" data-block="#l-login" class="bgm-green">Login</li>
+		            <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
+		        </ul>
+		    </div>
+		        
+		        <!-- Forgot Password -->
+		    <div class="lc-block" id="l-forget-password">
+		        <div class="input-group m-b-20">
+		             <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+		              <div class="fg-line">
+		                  <input type="text" class="form-control" placeholder="Email Address">
+		              </div>
+		        </div>
+		        <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+		         <ul class="login-navigation">
+		             <li data-block="#l-login" class="bgm-green">Login</li>
+		             <li data-block="#l-register" class="bgm-red">Register</li>
+		         </ul>
+		    </div>
+       	</div>
+  	</div>
+ </div>

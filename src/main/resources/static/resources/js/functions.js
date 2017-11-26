@@ -50,6 +50,21 @@ $(document).ready(function(){
             }
         });
     })();
+    $(document).on('click', 'a#edit ,button#reset', function(e){
+        e.preventDefault();
+        var d = $(this).data('pmb-action');
+
+        if (d === "edit") {
+            $(this).closest('.pmb-block').toggleClass('toggled');
+        }
+
+        if (d === "reset") {
+            $(this).closest('.pmb-block').removeClass('toggled');
+        }
+
+
+    });
+
 
     /* --------------------------------------------------------
         Scrollbar
@@ -382,12 +397,15 @@ $(document).ready(function(){
      */
 
     //Add blue animated border and remove with condition when focus and blur
-    if($('.fg-line')[0]) {
+   
         $('body').on('focus', '.fg-line .form-control', function(){
-            $(this).closest('.fg-line').addClass('fg-toggled');
+            
+        	$(this).closest('.fg-line').addClass('fg-toggled');
+            
         })
 
-        $('body').on('blur', '.form-control', function(){
+        $('body').on('focusout', '.form-control', function(){
+        	
             var p = $(this).closest('.form-group, .input-group');
             var i = p.find('.form-control').val();
 
@@ -400,10 +418,10 @@ $(document).ready(function(){
                 $(this).closest('.fg-line').removeClass('fg-toggled');
             }
         });
-    }
+    
 
     //Add blue border for pre-valued fg-flot text feilds
-    if($('.fg-float')[0]) {
+    
         $('.fg-float .form-control').each(function(){
             var i = $(this).val();
 
@@ -412,7 +430,7 @@ $(document).ready(function(){
             }
 
         });
-    }
+    
 
     /*
      * Audio and Video
@@ -534,23 +552,23 @@ $(document).ready(function(){
      */
 
     //Date Time Picker
-    if ($('.date-time-picker')[0]) {
+    
 	   $('.date-time-picker').datetimepicker();
-    }
+    
 
     //Time
-    if ($('.time-picker')[0]) {
+    
     	$('.time-picker').datetimepicker({
     	    format: 'LT'
     	});
-    }
+    
 
     //Date
-    if ($('.date-picker')[0]) {
+    
     	$('.date-picker').datetimepicker({
     	    format: 'DD/MM/YYYY'
     	});
-    }
+   
 
     /*
      * Form Wizard
@@ -680,12 +698,13 @@ $(document).ready(function(){
     /*
      * Login
      */
-    if ($('.login-content')[0]) {
+    
         //Add class to HTML. This is used to center align the logn box
-        $('html').addClass('login-content');
+       // $('html').addClass('login-content');
 
-        $('body').on('click', '.login-navigation > li', function(){
-            var z = $(this).data('block');
+        $(document).on('click', '.login-navigation > li', function(){
+            //alert("saas");
+        	var z = $(this).data('block');
             var t = $(this).closest('.lc-block');
 
             t.removeClass('toggled');
@@ -695,7 +714,7 @@ $(document).ready(function(){
             });
 
         })
-    }
+   
 
     /*
      * Fullscreen Browsing
@@ -767,7 +786,7 @@ $(document).ready(function(){
         $('body').on('click', '[data-pmb-action]', function(e){
             e.preventDefault();
             var d = $(this).data('pmb-action');
-
+            
             if (d === "edit") {
                 $(this).closest('.pmb-block').toggleClass('toggled');
             }
@@ -894,6 +913,17 @@ $(document).ready(function(){
 
         $('[data-current-skin]').attr('data-current-skin', skin)
 
+    });
+
+});
+$(document).on('click', '.login-navigation > li', function(){
+    var z = $(this).data('block');
+    var t = $(this).closest('.lc-block');
+
+    t.removeClass('toggled');
+
+    setTimeout(function(){
+        $(z).addClass('toggled');
     });
 
 });

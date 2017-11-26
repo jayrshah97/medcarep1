@@ -4,7 +4,7 @@
  */
 #header {
     .skin-switch {
-        padding: 10px 0 2px;
+        padding: 15px 0 8px;
         text-align: center;
     }
     
@@ -14,7 +14,7 @@
         border-radius: 50%;
         cursor: pointer;
         display: inline-block;
-        margin: 2px 3px;
+        margin: 2px 5px;
     }
 }
 /* ----------------------------- End header type 1 ------------------------------------- */
@@ -28,14 +28,14 @@
 #header-2 {
     .skin-switch {
         position: absolute;
-        right: 50px;
+        right: 58px;
         bottom: 23px;
         z-index: 1;
         
         .btn {
             background: #fff;
             width: 50px;
-            height: 50px;
+            height: 50px; 
             border-radius: 50%;
             font-size: 25px;
             z-index: 2;
@@ -55,47 +55,47 @@
             
             .ss-skin {
                 position: absolute;
-                
-                &.ss-1 {
+
+                &:nth-child(1) {
                     margin-left: -8px;
                     top: 12px;
                     left: 50%;
                 }
-                
-                &.ss-2 {
+                &:nth-child(2) {
                     right: 24px;
                     top: 26px;
                 }
-                
-                &.ss-3 {
+
+
+                &:nth-child(3) {
                     top: 50%;
                     margin-top: -8px;
                     right: 12px;
                 }
-                
-                &.ss-4 {
+
+                &:nth-child(4) {
                     right: 24px;
                     bottom: 26px;
                 }
-                
-                &.ss-5 {
+
+                &:nth-child(5) {
                     margin-left: -8px;
                     bottom: 12px;
                     left: 50%;
                 }
-                
-                &.ss-6 {
+
+                &:nth-child(6) {
                     left: 24px;
                     bottom: 26px;
                 }
-                
-                &.ss-7 {
+
+                &:nth-child(7) {
                     top: 50%;
                     margin-top: -8px;
                     left: 12px;
                 }
-                
-                &.ss-8 {
+
+                &:nth-child(8) {
                     left: 24px;
                     top: 26px;
                 }

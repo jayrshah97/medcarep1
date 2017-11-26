@@ -5,23 +5,24 @@
 }
 
 #fc-actions {
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
+	position: absolute;
+	bottom: 10px;
+	right: 12px;
 }
 
 .fc {
-    background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
-    margin-bottom: 30px;
+	background-color: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,.15);
+	margin-bottom: 30px;
 
-    td, th {
-        border-color: @table-border-color;
-    }
+	td, th {
+		border-color: @table-border-color;
+	}
 
-    th {
-        font-weight: 400;
-    }
+	th {
+	    font-weight: 400;
+
+	}
 
     table {
         background: transparent;
@@ -130,15 +131,15 @@
     position: relative;
 
     h2 {
-        margin-top: 7px;
-        font-size: 20px;
-        font-weight: 400;
-        text-transform: uppercase;
+		margin-top: 7px;
+		font-size: 20px;
+		font-weight: 400;
+		text-transform: uppercase;
         color: #fff;
     }
 
     .ui-button  {
-        border: 0;
+		border: 0;
         background: 0 0;
         padding: 0;
         outline: none !important;
@@ -150,52 +151,52 @@
         color: #fff;
 
         &:hover {
-            background: #fff;
+		    background: #fff;
             color: @m-teal;
-        }
+		}
 
-        & > span {
-            position: relative;
-            font-family: @font-icon-md;
-            font-size: 20px;
-            line-height: 100%;
-            width: 30px;
-            display: block;
-            margin-top: 2px;
+		& > span {
+		    position: relative;
+		    font-family: @font-icon-md;
+		    font-size: 20px;
+		    line-height: 100%;
+		    width: 30px;
+		    display: block;
+		    margin-top: 2px;
 
 
-            &:before {
-                position: relative;
-                z-index: 1;
-            }
+		    &:before {
+				position: relative;
+				z-index: 1;
+		    }
 
-            &.ui-icon-circle-triangle-w:before {
-                content: "\f2fa";
-            }
+		    &.ui-icon-circle-triangle-w:before {
+				content: "\f2fa";
+		    }
 
-            &.ui-icon-circle-triangle-e:before {
-                content: "\f2fb";
-            }
+		    &.ui-icon-circle-triangle-e:before {
+				content: "\f2fb";
+		    }
 
-        }
+		}
     }
 }
 .fc-event {
-    padding: 0;
+	padding: 0;
     font-size: 11px;
     border-radius: 0;
     border: 0;
 
     .fc-title {
-        padding: 2px 8px;
-        display: block;
+		padding: 2px 8px;
+		display: block;
     }
 
     .fc-time {
-        float: left;
-        background: rgba(0, 0, 0, 0.2);
-        padding: 2px 6px;
-        margin: 0 0 0 -1px;
+		float: left;
+		background: rgba(0, 0, 0, 0.2);
+		padding: 2px 6px;
+		margin: 0 0 0 -1px;
     }
 }
 
@@ -205,7 +206,7 @@
 }
 
 .fc-view > table > tbody > tr > .ui-widget-content {
-    border-top: 0;
+	border-top: 0;
 }
 
 div.fc-row {
@@ -235,16 +236,16 @@ div.fc-row {
             .opacity(0.8);
         }
 
-        &.selected {
-            &:before {
-                font-family: @font-icon-md;
-                content: "\f26b";
-                position: absolute;
-                text-align: center;
-                top: 3px;
-                width: 100%;
-                font-size: 17px;
-                color: #FFF;
+	&.selected {
+	    &:before {
+            font-family: @font-icon-md;
+            content: "\f26b";
+            position: absolute;
+            text-align: center;
+            top: 3px;
+            width: 100%;
+            font-size: 17px;
+            color: #FFF;
             }
         }
     }

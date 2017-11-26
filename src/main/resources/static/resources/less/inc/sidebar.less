@@ -1,26 +1,26 @@
-.sidebar {
+#sidebar {
     position: fixed;
-    background: #fff; 
+    background: #fff;
     box-shadow: 0 0 10px rgba(51, 51, 51, 0.38);
-    height: ~"calc(100% - 65px)";
     top: 65px;
+    height: ~"calc(100% - 65px)";
+    .translate3d(-@sidebar-left-width, 0, 0);
+    z-index: 5;
+    width: @sidebar-left-width;
+    overflow: hidden;
+    .opacity(0);
     .transition(all);
     .transition-duration(300ms);
-    z-index: 10;
-    .opacity(0);
-    overflow-y: auto;
     
-    &.toggled {
-        .opacity(1);
+    .sidebar-inner {
+        height: 100%;
+        overflow-y: auto;
+        width: @sidebar-left-width;
     }
-}
-
-#sidebar {
-    width: @sidebar-left-width;
-    .translate3d(-@sidebar-left-width, 0, 0);
     
     &.toggled {
         .translate3d(0, 0, 0);
+        .opacity(1);
     }
 }
 
@@ -69,7 +69,9 @@
         border-bottom: 1px solid #E6E6E6;
         
     }
-
+    
+    .clearfix();
+    
     &.toggled {
         .profile-info {
             & > i {
@@ -79,11 +81,12 @@
     }
 }
 
+
 .main-menu {
-    list-style: none; 
+    list-style: none;
     padding-left: 0;
     margin: 20px 0 0 0;
-    
+
     & > li {
         & > a {
             padding: 14px 20px 14px 52px;
@@ -91,12 +94,12 @@
             color: #4C4C4C;
             font-weight: 500;
             position: relative;
-            
+
             &:hover {
                 color: #262626;
                 background-color: #f7f7f7;
             }
-            
+
             & > i {
                 position: absolute;
                 left: 16px;
@@ -107,7 +110,7 @@
                 padding: 13px 0;
             }
         }
-        
+
         &.active {
             & > a {
                 color: #262626;
@@ -120,7 +123,7 @@
 .sub-menu {
     & > a {
         position: relative;
-        
+
         &:before, &:after {
             position: absolute;
             top: 12px;
@@ -132,63 +135,63 @@
             .transition-duration(250ms);
             .backface-visibility(hidden);
         }
-        
+
         &:before {
             content: "\f278";
             .scale(1);
         }
-        
+
         &:after {
             content: "\f273";
             .scale(0);
         }
     }
-    
+
     .sub-menu > a {
         &:before, &:after {
             top: 5px;
         }
     }
-    
+
     &.toggled {
         & > a {
             &:before {
                 content: "\f278";
                 .scale(0);
             }
-            
+
             &:after {
                 content: "\f273";
                 .scale(1);
             }
         }
     }
-    
+
     ul {
         list-style: none;
         display: none;
         padding: 0;
-        
+
         & > li {
             & > a {
                 color: #7f7f7f;
                 padding: 8px 20px 8px 50px;
                 font-weight: 500;
                 display: block;
-                
+
                 &.active, &:hover {
                     color: #000;
                 }
             }
-            
+
             &:first-child > a {
                 padding-top: 14px;
             }
-            
+
             &:last-child > a {
                 padding-bottom: 16px;
             }
-             
+
             ul {
                 font-size: 12px;
                 margin: 10px 0;
@@ -201,11 +204,11 @@
         & > ul {
             display: block;
         }
-    } 
+    }
 }
 
 /*
- * layout
+ * Full width layout
  */
 body {
     &:not(.sw-toggled) {
@@ -217,18 +220,17 @@ body {
     &.sw-toggled {
         #sidebar {
             @media (min-width: @screen-lg-min) {
-                .translate3d(0, 0, 0);
-                .opacity(1);
+                .translate3d(0, 0, 0) !important;
+                .opacity(1) !important;
                 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
             }
 
-            @media (max-width: @screen-md-max) {
+            @media (max-width: @screen-lg-min) {
                 box-shadow: 0 0 10px rgba(51, 51, 51, 0.38);
             }
         }
     }
 }
-
 
 /*
  * For Stupid IE9
@@ -246,7 +248,3 @@ body {
         }
     }
 }
-
-
-
-

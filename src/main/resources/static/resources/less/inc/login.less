@@ -8,22 +8,23 @@
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
     border-radius: 2px;
     width: 500px;
-    display: inline-block;
+    display: inline-block; 
     margin-top: 42px;
     vertical-align: middle;
-    position: relative;
+    position: relative; 
+    
+    &:not(.lcb-alt) {
+        padding: 35px 55px 35px; 
+        
+        .btn-login {
+            top: 50%;
+            margin-top: -25px;  
+            right: -25px; 
+        }
+    }
     
     &:not(.toggled) {
         display: none;
-    }
-    
-    &.toggled {
-        .animated(fadeInUp, 300ms);
-        z-index: 10;
-    } 
-    
-    &:not(.lcb-alt) {
-        padding: 35px 55px 35px;
     }
 
     @media (max-width: @screen-xs-max) {
@@ -36,13 +37,9 @@
         text-align: left; 
     }
 
-    &:not(.lcb-alt) {
-        .btn-login {
-            top: 50%;
-            margin-top: -25px; 
-            right: -25px; 
-        }
-    }
+    &.toggled {
+        z-index: 10; 
+    } 
 }
 
 .login-navigation {     
